@@ -75,11 +75,11 @@ export default function About() {
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 4, repeat: Infinity }}
-              className="absolute -bottom-6 -right-6 bg-midnight-200 border border-gold/30 rounded-xl p-4 shadow-xl"
+              className="absolute -bottom-4 right-2 sm:-bottom-6 sm:-right-6 bg-midnight-200 border border-gold/30 rounded-xl p-3 sm:p-4 shadow-xl"
             >
               <div className="text-center">
-                <p className="text-3xl font-heading gradient-text">10+</p>
-                <p className="text-xs text-gray-400 uppercase tracking-wider">Years Experience</p>
+                <p className="text-2xl sm:text-3xl font-heading gradient-text">10+</p>
+                <p className="text-[10px] sm:text-xs text-gray-400 uppercase tracking-wider">Years Experience</p>
               </div>
             </motion.div>
           </motion.div>

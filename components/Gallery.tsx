@@ -110,7 +110,7 @@ export default function Gallery() {
           {/* Navigation Buttons */}
           <button
             onClick={goToPrev}
-            className="absolute left-0 sm:-left-4 lg:-left-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-midnight-200/80 backdrop-blur-sm border border-gold/20 flex items-center justify-center text-gold hover:bg-gold hover:text-midnight transition-all duration-300 shadow-lg"
+            className="absolute -left-1 sm:-left-4 lg:-left-6 top-1/2 -translate-y-1/2 z-10 w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-midnight-200/90 backdrop-blur-sm border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-midnight transition-all duration-300 shadow-lg shadow-black/30"
             aria-label="Previous slide"
           >
             <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -118,16 +118,65 @@ export default function Gallery() {
 
           <button
             onClick={goToNext}
-            className="absolute right-0 sm:-right-4 lg:-right-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-midnight-200/80 backdrop-blur-sm border border-gold/20 flex items-center justify-center text-gold hover:bg-gold hover:text-midnight transition-all duration-300 shadow-lg"
+            className="absolute -right-1 sm:-right-4 lg:-right-6 top-1/2 -translate-y-1/2 z-10 w-9 h-9 sm:w-12 sm:h-12 rounded-full bg-midnight-200/90 backdrop-blur-sm border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-midnight transition-all duration-300 shadow-lg shadow-black/30"
             aria-label="Next slide"
           >
             <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
 
           {/* Carousel Track */}
-          <div className="overflow-hidden mx-6 sm:mx-8 lg:mx-10">
+          <div className="overflow-hidden mx-8 sm:mx-8 lg:mx-10">
+            {/* Mobile: Single centered image */}
+            <div className="sm:hidden">
+              <motion.div
+                className="flex"
+                animate={{
+                  x: `-${currentIndex * 100}%`,
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 30,
+                }}
+              >
+                {galleryImages.map((image) => (
+                  <div
+                    key={image.id}
+                    className="flex-shrink-0 w-full flex justify-center px-2"
+                  >
+                    <div className="w-full max-w-[320px] group relative aspect-[4/3] bg-gradient-to-br from-midnight-100 to-midnight-300 rounded-2xl overflow-hidden border border-gold/10 hover:border-gold/30 transition-all duration-300 shadow-xl shadow-black/20">
+                      {/* Placeholder Image */}
+                      <div className="absolute inset-0 flex flex-col items-center justify-center bg-midnight-200/50">
+                        <Camera className="w-14 h-14 text-gold/30 mb-3" />
+                        <span className="text-gray-500 text-sm">
+                          Image {image.id}
+                        </span>
+                      </div>
+
+                      {/* Gradient Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-midnight via-transparent to-transparent opacity-80" />
+
+                      {/* Image Info */}
+                      <div className="absolute bottom-0 left-0 right-0 p-4 text-center">
+                        <span className="inline-block px-3 py-1 bg-gold/20 backdrop-blur-sm rounded-full text-gold text-xs font-medium mb-2">
+                          {image.category}
+                        </span>
+                        <h3 className="text-white font-semibold text-base">
+                          {image.title}
+                        </h3>
+                      </div>
+
+                      {/* Hover Effect */}
+                      <div className="absolute inset-0 bg-gold/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </div>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+
+            {/* Tablet & Desktop: Multiple images */}
             <motion.div
-              className="flex gap-4 sm:gap-6"
+              className="hidden sm:flex gap-6"
               animate={{
                 x: `-${currentIndex * (100 / visibleSlides)}%`,
               }}
@@ -137,16 +186,16 @@ export default function Gallery() {
                 damping: 30,
               }}
             >
-              {galleryImages.map((image, index) => (
+              {galleryImages.map((image) => (
                 <div
                   key={image.id}
-                  className="flex-shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
+                  className="flex-shrink-0 sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
                 >
-                  <div className="group relative aspect-[4/3] bg-gradient-to-br from-midnight-100 to-midnight-300 rounded-xl sm:rounded-2xl overflow-hidden border border-gold/10 hover:border-gold/30 transition-all duration-300">
+                  <div className="group relative aspect-[4/3] bg-gradient-to-br from-midnight-100 to-midnight-300 rounded-2xl overflow-hidden border border-gold/10 hover:border-gold/30 transition-all duration-300">
                     {/* Placeholder Image */}
                     <div className="absolute inset-0 flex flex-col items-center justify-center bg-midnight-200/50">
-                      <Camera className="w-12 h-12 sm:w-16 sm:h-16 text-gold/30 mb-3" />
-                      <span className="text-gray-500 text-xs sm:text-sm">
+                      <Camera className="w-16 h-16 text-gold/30 mb-3" />
+                      <span className="text-gray-500 text-sm">
                         Image {image.id}
                       </span>
                     </div>
@@ -155,11 +204,11 @@ export default function Gallery() {
                     <div className="absolute inset-0 bg-gradient-to-t from-midnight via-transparent to-transparent opacity-80" />
 
                     {/* Image Info */}
-                    <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
-                      <span className="inline-block px-2 py-1 bg-gold/20 backdrop-blur-sm rounded-full text-gold text-[10px] sm:text-xs font-medium mb-2">
+                    <div className="absolute bottom-0 left-0 right-0 p-5">
+                      <span className="inline-block px-2 py-1 bg-gold/20 backdrop-blur-sm rounded-full text-gold text-xs font-medium mb-2">
                         {image.category}
                       </span>
-                      <h3 className="text-white font-semibold text-sm sm:text-base lg:text-lg">
+                      <h3 className="text-white font-semibold text-base lg:text-lg">
                         {image.title}
                       </h3>
                     </div>
@@ -173,7 +222,7 @@ export default function Gallery() {
           </div>
 
           {/* Dots Indicator */}
-          <div className="flex justify-center gap-2 mt-6 sm:mt-8">
+          <div className="flex justify-center gap-1.5 sm:gap-2 mt-6 sm:mt-8">
             {Array.from({ length: maxIndex + 1 }).map((_, index) => (
               <button
                 key={index}
