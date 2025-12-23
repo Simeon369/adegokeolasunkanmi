@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -162,30 +163,27 @@ export default function Hero() {
           </a>
         </motion.div>
 
-        {/* Placeholder for coach image */}
+        {/* Coach image */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 1 }}
           className="mt-10 sm:mt-16 mb-16 sm:mb-8 relative inline-block"
         >
-          <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-midnight-100 to-midnight-300 border-4 border-gold/30 flex items-center justify-center mx-auto relative overflow-hidden">
-            <div className="absolute inset-0 bg-gold/5" />
-            <div className="text-center p-6 sm:p-8">
-              <div className="text-4xl sm:text-5xl md:text-6xl mb-2 sm:mb-4">
-                📸
-              </div>
-              <p className="text-gray-500 text-xs sm:text-sm">
-                Coach Photo
-                <br />
-                Coming Soon
-              </p>
-            </div>
+          <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full border-4 border-gold/30 mx-auto relative overflow-hidden shadow-2xl shadow-gold/20">
+            <Image
+              src="/galleryImages/gallery-11.jpeg"
+              alt="Coach Adegoke Olasukanmi"
+              fill
+              className="object-cover object-top"
+              sizes="(max-width: 640px) 192px, (max-width: 768px) 256px, 320px"
+              priority
+            />
             {/* Decorative ring */}
-            <div className="absolute inset-0 rounded-full border-2 border-gold/20 animate-pulse" />
+            <div className="absolute inset-0 rounded-full border-2 border-gold/20" />
           </div>
           {/* Glow effect */}
-          <div className="absolute inset-0 rounded-full bg-gold/10 blur-3xl -z-10" />
+          <div className="absolute inset-0 rounded-full bg-gold/20 blur-3xl -z-10" />
         </motion.div>
       </div>
 

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Award, Users, Target, Heart } from 'lucide-react'
+import Image from 'next/image'
 
 const values = [
   {
@@ -60,13 +61,14 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <div className="aspect-[4/5] bg-gradient-to-br from-midnight-100 to-midnight-300 rounded-2xl border border-gold/20 overflow-hidden relative">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="text-8xl mb-4">🏆</div>
-                  <p className="text-gray-500">Coach Photo<br />Coming Soon</p>
-                </div>
-              </div>
+            <div className="aspect-[4/5] rounded-2xl border border-gold/20 overflow-hidden relative shadow-2xl shadow-black/30">
+              <Image
+                src="/galleryImages/gallery-03.jpeg"
+                alt="Coach Adegoke Olasukanmi officiating"
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
               {/* Decorative corner */}
               <div className="absolute top-0 right-0 w-24 h-24 bg-gold-gradient opacity-20 blur-2xl" />
               <div className="absolute bottom-0 left-0 w-32 h-32 bg-fire opacity-10 blur-3xl" />
@@ -117,7 +119,7 @@ export default function About() {
             <blockquote className="border-l-4 border-gold pl-6 py-2 italic text-gray-400 my-8">
               "Every game is an opportunity to inspire, every call is a commitment to fairness, 
               and every training session is a step toward greatness."
-              <footer className="mt-2 text-gold not-italic font-medium">— Coach Adegoke</footer>
+              <footer className="mt-2 text-gold not-italic font-medium">— Coach SK</footer>
             </blockquote>
           </motion.div>
         </div>

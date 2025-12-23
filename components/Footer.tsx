@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { ArrowUp } from 'lucide-react'
+import Image from 'next/image'
 
 const footerLinks = {
   navigation: [
@@ -18,10 +19,7 @@ const footerLinks = {
     { name: 'Flag Football Officiating', href: '#services' },
   ],
   social: [
-    { name: 'Instagram', href: '#' },
-    { name: 'Twitter', href: '#' },
-    { name: 'Facebook', href: '#' },
-    { name: 'LinkedIn', href: '#' },
+    { name: 'Instagram', href: 'https://www.instagram.com/olashot30/' },
   ],
 }
 
@@ -40,12 +38,18 @@ export default function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-1">
             <a href="#home" className="flex items-center gap-3 mb-6">
-              <div className="w-14 h-14 rounded-full bg-gold-gradient flex items-center justify-center">
-                <span className="font-heading text-2xl text-midnight">CA</span>
+              <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-gold/40 relative">
+                <Image
+                  src="/galleryImages/gallery-11.jpeg"
+                  alt="Coach SK"
+                  fill
+                  className="object-cover object-top"
+                  sizes="56px"
+                />
               </div>
             </a>
-            <h3 className="font-heading text-2xl tracking-wide mb-2">COACH ADEGOKE</h3>
-            <p className="font-heading text-lg gradient-text tracking-wide mb-4">OLASUKANMI</p>
+            <h3 className="font-heading text-2xl tracking-wide mb-2">COACH SK</h3>
+            <p className="font-heading text-lg gradient-text tracking-wide mb-4">ADEGOKE OLASUKANMI</p>
             <p className="text-gray-400 text-sm leading-relaxed">
               Elevating athletes and enforcing excellence on every court and field.
             </p>
@@ -93,6 +97,8 @@ export default function Footer() {
                 <li key={link.name}>
                   <a
                     href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-gray-400 hover:text-gold transition-colors duration-200 text-sm"
                   >
                     {link.name}
@@ -112,7 +118,7 @@ export default function Footer() {
         {/* Bottom section */}
         <div className="mt-16 pt-8 border-t border-gold/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-sm text-center sm:text-left">
-            © {new Date().getFullYear()} Coach Adegoke Olasukanmi. All rights reserved.
+            © {new Date().getFullYear()} Coach SK. All rights reserved.
           </p>
           
           {/* Back to top button */}

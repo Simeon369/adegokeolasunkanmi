@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
+import Image from "next/image";
 
 // Primary links shown directly in navbar
 const primaryLinks = [
@@ -67,17 +68,19 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-3">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gold-gradient flex items-center justify-center">
-              <span className="font-heading text-xl sm:text-2xl text-midnight">
-                CA
-              </span>
+          <a href="#home" className="flex items-center gap-2 sm:gap-3">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden border-2 border-gold/40 relative">
+              <Image
+                src="/galleryImages/gallery-11.jpeg"
+                alt="Coach SK"
+                fill
+                className="object-cover object-top"
+                sizes="48px"
+              />
             </div>
-            <div className="hidden sm:block">
-              <p className="font-heading text-lg lg:text-xl tracking-wide text-white">
-                COACH ADEGOKE
-              </p>
-            </div>
+            <p className="font-heading text-base sm:text-lg lg:text-xl tracking-wide text-white">
+              Coach SK
+            </p>
           </a>
 
           {/* Desktop Navigation - Simplified */}

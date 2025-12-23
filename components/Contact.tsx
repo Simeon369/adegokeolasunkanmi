@@ -6,10 +6,14 @@ import { useRef, useState } from 'react'
 import { Send, Mail, Phone, MapPin, Clock, CheckCircle, Loader2, AlertCircle } from 'lucide-react'
 
 const contactInfo = [
-  { icon: Mail, label: 'Email', value: 'coach@olasukanmi.com', href: 'mailto:coach@olasukanmi.com' },
-  { icon: Phone, label: 'Phone', value: '+1 (555) 123-4567', href: 'tel:+15551234567' },
-  { icon: MapPin, label: 'Location', value: 'Your City, State', href: '#' },
+  { icon: Mail, label: 'Email', value: 'Tadedoyin80@gmail.com', href: 'mailto:Tadedoyin80@gmail.com' },
+  { icon: Phone, label: 'Phone', value: '08063112860', href: 'tel:+2348063112860' },
+  { icon: MapPin, label: 'Location', value: 'Lagos, Nigeria', href: '#' },
   { icon: Clock, label: 'Availability', value: 'Mon - Sat: 8AM - 8PM', href: '#' },
+]
+
+const socialLinks = [
+  { name: 'Instagram', href: 'https://www.instagram.com/olashot30/', username: '@olashot30' },
 ]
 
 const serviceOptions = [
@@ -141,14 +145,16 @@ export default function Contact() {
               <p className="text-gray-500 text-sm">
                 Follow for updates and basketball tips:
               </p>
-              <div className="flex gap-4 mt-4">
-                {['Instagram', 'Twitter', 'Facebook'].map((social) => (
+              <div className="flex flex-wrap gap-3 mt-4">
+                {socialLinks.map((social) => (
                   <a
-                    key={social}
-                    href="#"
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="px-4 py-2 bg-midnight-200/50 border border-gold/10 rounded-lg text-gray-400 hover:text-gold hover:border-gold/30 transition-all duration-300 text-sm"
                   >
-                    {social}
+                    {social.name}
                   </a>
                 ))}
               </div>
@@ -283,7 +289,7 @@ export default function Contact() {
                   className="flex items-center gap-2 text-green-400 bg-green-400/10 border border-green-400/20 rounded-lg p-4"
                 >
                   <CheckCircle className="w-5 h-5 flex-shrink-0" />
-                  <p>Message sent successfully! Coach Adegoke will get back to you soon.</p>
+                  <p>Message sent successfully! Coach SK will get back to you soon.</p>
                 </motion.div>
               )}
 
