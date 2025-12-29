@@ -49,7 +49,7 @@ export default function Footer() {
               </div>
             </a>
             <h3 className="font-heading text-2xl tracking-wide mb-2">COACH SK</h3>
-            <p className="font-heading text-lg gradient-text tracking-wide mb-4">ADEGOKE OLASUKANMI</p>
+            <p className="font-heading text-lg gradient-text tracking-wide mb-4">ADEGOKE OLASUNKANMI</p>
             <p className="text-gray-400 text-sm leading-relaxed">
               Elevating athletes and enforcing excellence on every court and field.
             </p>

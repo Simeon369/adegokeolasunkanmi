@@ -101,7 +101,7 @@ export default function Hero() {
             ADEGOKE
           </span>
           <span className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl block">
-            OLASUKANMI
+            OLASUNKANMI
           </span>
         </motion.h1>
 
@@ -173,7 +173,7 @@ export default function Hero() {
           <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full border-4 border-gold/30 mx-auto relative overflow-hidden shadow-2xl shadow-gold/20">
             <Image
               src="/galleryImages/gallery-11.jpeg"
-              alt="Coach Adegoke Olasukanmi"
+              alt="Coach Adegoke Olasunkanmi"
               fill
               className="object-cover object-top"
               sizes="(max-width: 640px) 192px, (max-width: 768px) 256px, 320px"

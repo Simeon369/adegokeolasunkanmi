@@ -64,7 +64,7 @@ export default function About() {
             <div className="aspect-[4/5] rounded-2xl border border-gold/20 overflow-hidden relative shadow-2xl shadow-black/30">
               <Image
                 src="/galleryImages/gallery-03.jpeg"
-                alt="Coach Adegoke Olasukanmi officiating"
+                alt="Coach Adegoke Olasunkanmi officiating"
                 fill
                 className="object-cover object-top"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -99,7 +99,7 @@ export default function About() {
             
             <div className="space-y-4 text-gray-300 leading-relaxed">
               <p>
-                Coach Adegoke Olasukanmi brings over a decade of experience to the world of sports, 
+                Coach Adegoke Olasunkanmi brings over a decade of experience to the world of sports, 
                 combining his passion for basketball and football with an unwavering commitment to excellence.
               </p>
               <p>

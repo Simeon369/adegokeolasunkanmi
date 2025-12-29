@@ -305,10 +305,7 @@ export default function Contact() {
                 </motion.div>
               )}
 
-              {/* Note about setup */}
-              <p className="text-gray-600 text-xs text-center">
-                * Form requires Web3Forms setup. Get a free key at web3forms.com
-              </p>
+              
             </form>
           </motion.div>
         </div>

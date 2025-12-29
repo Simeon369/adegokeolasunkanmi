@@ -16,11 +16,11 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Coach Adegoke Olasukanmi | Basketball Coach & Official",
+  title: "Coach Adegoke Olasunkanmi | Basketball Coach & Official",
   description:
     "Professional basketball coach, basketball referee, and flag football official based in Nigeria. Elevating athletes and enforcing excellence on every court and field.",
   keywords: [
-    "adegoke olasukanmi",
+    "adegoke olasunkanmi",
     "basketball coach",
     "basketball referee",
     "flag football referee",
@@ -36,9 +36,9 @@ export const metadata: Metadata = {
     "sports development",
     "coach for athletes",
   ],
-  authors: [{ name: "Coach Adegoke Olasukanmi" }],
+  authors: [{ name: "Coach Adegoke Olasunkanmi" }],
   openGraph: {
-    title: "Coach Adegoke Olasukanmi | Basketball Coach & Official",
+    title: "Coach Adegoke Olasunkanmi | Basketball Coach & Official",
     description:
       "Professional basketball coach, basketball referee, and flag football official.",
     type: "website",
